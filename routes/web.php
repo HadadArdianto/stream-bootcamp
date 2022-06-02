@@ -53,6 +53,7 @@ Route::group(['prefix' => 'member', 'middleware' => ['auth']], function () {
     Route::get('subscription', [UserPremiumController::class, 'index'])->name('member.user_premium.index');
     Route::delete('subscription/{id}', [UserPremiumController::class, 'destroy'])->name('member.user_premium.destroy');
 
+    Route::get('logout', [MemberLoginController::class, 'logout'])->name('member.login.logout');
 });
 
 Route::get('/admin/login', [LoginController::class, 'index'])->name('admin.login');
